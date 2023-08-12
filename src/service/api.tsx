@@ -10,7 +10,7 @@ async function getUserData(username: string) {
         Authorization: `Bearer ${accessToken}`,
       },
     });
-    console.log("Data->", response);
+
     return response.data;
   } catch (error: any) {
     throw new Error("Erro ao buscar dados do usuário: " + error.message);

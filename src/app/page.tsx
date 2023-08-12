@@ -20,9 +20,8 @@ export default function Home() {
   async function getUser() {
     const response = await getUserData(search);
     setUser(response);
-    console.log("User->", user);
   }
-
+  console.log("token->", process.env.token);
   return (
     <MainComponent>
       <div className="box-logo">
@@ -30,16 +29,14 @@ export default function Home() {
         <h1>HUBusca</h1>
       </div>
       <div className="box-input">
-        <form onSubmit={getUser}>
-          <input
-            placeholder="Nome do usuario"
-            type="text"
-            required
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </form>
-        <button>Buscar</button>
+        <input
+          placeholder="Nome do usuario"
+          type="text"
+          required
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button onClick={getUser}>Buscar</button>
       </div>
       <div className="search-result">
         {user.name === "" ? (
