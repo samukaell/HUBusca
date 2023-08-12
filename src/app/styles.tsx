@@ -72,7 +72,7 @@ const MainComponent = styled.main`
 
 const DivNull = styled.div`
   width: 60%;
-  height: 40vh;
+  height: 35vh;
 `;
 
 export { MainComponent, DivNull };

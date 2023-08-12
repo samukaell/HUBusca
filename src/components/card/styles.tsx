@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 const CardComponent = styled.div`
   width: 60%;
-  height: 40vh;
-  padding: 10px;
+  height: 35vh;
+  padding: 20px;
 
   background-color: white;
   border-radius: 20px;
@@ -14,7 +14,7 @@ const CardComponent = styled.div`
   .box-name-image {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     .box-name {
       display: flex;
       align-items: center;
@@ -44,6 +44,11 @@ const CardComponent = styled.div`
     .followers {
       font-size: 14px;
       font-weight: bold;
+      margin-left: 10px;
+    }
+    .icon {
+      font-size: 25px;
+      margin-left: 10px;
     }
   }
 `;
