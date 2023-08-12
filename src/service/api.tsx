@@ -1,15 +1,10 @@
 import axios from "axios";
 
 async function getUserData(username: string) {
-  const accessToken = ""; // Substitua pelo seu token de acesso pessoal
   const apiUrl = `https://api.github.com/users/${username}`;
 
   try {
-    const response = await axios.get(apiUrl, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    });
+    const response = await axios.get(apiUrl);
 
     return response.data;
   } catch (error: any) {
