@@ -35,6 +35,9 @@ const MainComponent = styled.main`
     width: 70%;
     display: flex;
     justify-content: center;
+    form {
+      width: 100%;
+    }
     input {
       width: 40%;
       height: 45px;

@@ -8,6 +8,7 @@ import { IoSearch } from "react-icons/io5";
 import { getUserData } from "@/service/api";
 
 export default function Home() {
+  const [search, setSearch] = useState("");
   const [user, setUser] = useState({
     name: "",
     avatar_url: "",
@@ -17,14 +18,10 @@ export default function Home() {
     following: 0,
   });
   async function getUser() {
-    const response = await getUserData("luanerdy");
+    const response = await getUserData(search);
     setUser(response);
     console.log("User->", user);
   }
-  //Load Date
-  useEffect(() => {
-    getUser();
-  }, []);
 
   return (
     <MainComponent>
@@ -33,10 +30,16 @@ export default function Home() {
         <h1>HUBusca</h1>
       </div>
       <div className="box-input">
-        <input placeholder="Nome do usuario" />
-        <button>
-          <IoSearch font-size="30px" color="black" />
-        </button>
+        <form onSubmit={getUser}>
+          <input
+            placeholder="Nome do usuario"
+            type="text"
+            required
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </form>
+        <button>Buscar</button>
       </div>
       <div className="search-result">
         {user.name === "" ? (
@@ -57,6 +60,7 @@ export default function Home() {
 }
 
 /*
+//<IoSearch font-size="30px" color="black" />
 <Card
   name={"Samuel"}
   avatar_url={"https://avatars.githubusercontent.com/u/47232059?v=4"}
