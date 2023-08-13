@@ -11,29 +11,38 @@ export type UserProps = {
 };
 
 type AuthContextProps = {
-  user: UserProps | null;
-  login: (user: UserProps) => void;
+  user: UserProps[];
+  getLastUser: () => UserProps;
+  login: (newUser: UserProps) => void;
 };
 
 const UserContext = createContext<AuthContextProps>({} as AuthContextProps);
 
 const UserProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<UserProps | null>({
-    name: "",
-    avatar_url: "",
-    login: "",
-    bio: "",
-    followers: 0,
-    following: 0,
-    location: "",
-  });
+  const [user, setUser] = useState<UserProps[]>([]);
 
-  const login = (user: UserProps) => {
-    setUser(user);
-    console.log("User->", user);
+  const login = (newUser: UserProps) => {
+    const updatedUsers = [...user, newUser];
+    setUser(updatedUsers);
+  };
+
+  const getLastUser = (): UserProps => {
+    if (user.length > 0) {
+      return user[user.length - 1];
+    } else {
+      return {
+        name: "",
+        avatar_url: "",
+        login: "",
+        bio: "",
+        followers: 0,
+        following: 0,
+        location: "",
+      };
+    }
   };
   return (
-    <UserContext.Provider value={{ user, login }}>
+    <UserContext.Provider value={{ user, getLastUser, login }}>
       <>{children}</>
     </UserContext.Provider>
   );

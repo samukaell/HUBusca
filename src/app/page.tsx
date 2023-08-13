@@ -1,6 +1,6 @@
 "use client";
 import { useContext, useState, useEffect } from "react";
-import { UserContext } from "./context/page";
+import { UserContext, UserProps } from "./context/page";
 import Card from "@/components/card";
 import { MainComponent, DivNull } from "./styles";
 import Header from "@/components/header";
@@ -11,15 +11,24 @@ import { getUserData } from "@/service/api";
 
 export default function Home() {
   const [search, setSearch] = useState("");
-  const { user, login } = useContext(UserContext);
-  const [userGit, setUserGit] = useState(user);
+  const { user, getLastUser, login } = useContext(UserContext);
+  const [userGit, setUserGit] = useState<UserProps>({
+    name: "",
+    avatar_url: "",
+    login: "",
+    bio: "",
+    followers: 0,
+    following: 0,
+    location: "",
+  });
 
   async function getUser() {
     const response = await getUserData(search);
     login(response);
+    console.log("Lista", user);
   }
   useEffect(() => {
-    setUserGit(user);
+    setUserGit(getLastUser());
   }, [login]);
 
   return (
@@ -61,18 +70,3 @@ export default function Home() {
     </>
   );
 }
-
-/*
-//<IoSearch font-size="30px" color="black" />
-<Card
-  name={"Samuel"}
-  avatar_url={"https://avatars.githubusercontent.com/u/47232059?v=4"}
-  login={"Samukaell"}
-  bio={
-     "Desenvolvedor Full Stack. Estudante universitário de ciências da computação e aluno da Driven."
-       }
-  followers={84}
-  following={173}
-/>
-
-*/
