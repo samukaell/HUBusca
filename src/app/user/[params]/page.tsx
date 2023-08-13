@@ -9,6 +9,7 @@ import { useContext, useEffect, useState } from "react";
 import { getUserData, getRepoByUser } from "@/service/api";
 export default function User() {
   const { params } = useParams();
+  const { login } = useContext(UserContext);
   const [repo, setRepo] = useState([
     { id: 1, name: "", description: "", html_url: "" },
   ]);
@@ -25,6 +26,7 @@ export default function User() {
   async function loadByParams() {
     const response = await getUserData(params.toString());
     setUserGit(response);
+    login(response);
     const repository = await getRepoByUser(params.toString());
     setRepo(repository);
   }

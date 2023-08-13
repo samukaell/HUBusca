@@ -15,6 +15,7 @@ const MainComponent = styled.main`
 
   .info-user {
     margin-top: 10px;
+    margin-left: 5vw;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -61,7 +62,7 @@ const MainComponent = styled.main`
   }
   .repo {
     margin-top: 10px;
-    width: 40%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;

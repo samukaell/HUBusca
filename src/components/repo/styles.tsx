@@ -4,7 +4,7 @@ import "../../global/reset.css";
 import styled from "styled-components";
 
 const RepoComponent = styled.div`
-  width: 60%;
+  width: 40%;
   margin-bottom: 10px;
   height: 100px;
   padding: 20px;
