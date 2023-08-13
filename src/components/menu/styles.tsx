@@ -51,6 +51,10 @@ const CardUserComponent = styled.div`
     border-radius: 5px;
     margin-right: 5px;
   }
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export { MenuComponent, CardUserComponent };

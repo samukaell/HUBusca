@@ -53,10 +53,12 @@ const MainComponent = styled.main`
 
       .name {
         font-weight: bold;
+        margin-bottom: 10px;
       }
       .login {
         font-size: 20px;
         color: #a9a9a9;
+        margin-bottom: 10px;
       }
     }
   }

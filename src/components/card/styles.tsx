@@ -31,6 +31,9 @@ const CardComponent = styled.div`
       width: 130px;
       border-radius: 15px;
     }
+    .avatar:hover {
+      cursor: pointer;
+    }
   }
   .bio {
     font-family: "roboto";

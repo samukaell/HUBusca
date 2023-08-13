@@ -61,7 +61,7 @@ export default function User() {
           </div>
         </div>
         <div className="repo">
-          <p className="repo-title">Repositorio</p>
+          <p className="repo-title">Repositorios</p>
           <div className="box-repo">
             {repo.map((repository, index) => [
               <Repo

@@ -22,6 +22,10 @@ const RepoComponent = styled.div`
   p {
     color: #a9a9a9;
   }
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export { RepoComponent };
