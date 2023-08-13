@@ -22,8 +22,23 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<UserProps[]>([]);
 
   const login = (newUser: UserProps) => {
-    const updatedUsers = [...user, newUser];
-    setUser(updatedUsers);
+    const existingUserIndex = user.findIndex(
+      (user) => user.login === newUser.login
+    );
+
+    if (existingUserIndex !== -1) {
+      // Remover o usuário existente da lista
+      const updatedUsers = user.filter(
+        (_, index) => index !== existingUserIndex
+      );
+      // Adicionar o usuário existente novamente no final da lista
+      updatedUsers.push(user[existingUserIndex]);
+      setUser(updatedUsers);
+    } else {
+      // Clonar o array existente e adicionar o novo objeto
+      const updatedUsers = [...user, newUser];
+      setUser(updatedUsers);
+    }
   };
 
   const getLastUser = (): UserProps => {
