@@ -21,6 +21,7 @@ export default function Menu(props: any) {
       {user
         .map((userGit, index) => [
           <CardUserComponent
+            key={userGit.id}
             onClick={() => {
               updateList(userGit.login);
             }}

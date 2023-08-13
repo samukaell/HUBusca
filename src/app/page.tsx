@@ -13,6 +13,7 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const { user, getLastUser, login } = useContext(UserContext);
   const [userGit, setUserGit] = useState<UserProps>({
+    id: 1,
     name: "",
     avatar_url: "",
     login: "",
@@ -63,6 +64,7 @@ export default function Home() {
               followers={userGit?.followers}
               following={userGit?.following}
               location={userGit?.location}
+              key={userGit.id}
             />
           )}
         </div>

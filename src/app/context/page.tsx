@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
 export type UserProps = {
+  id: number;
   name: string;
   avatar_url: string;
   login: string;
@@ -46,6 +47,7 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
       return user[user.length - 1];
     } else {
       return {
+        id: 1,
         name: "",
         avatar_url: "",
         login: "",
