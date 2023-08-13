@@ -21,15 +21,36 @@ const MenuComponent = styled.div<Props>`
   background-color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const CardUserComponent = styled.div`
   width: 100%;
-  border-style: solid;
+  margin-top: 2px;
+  margin-bottom: 3px;
+  margin-left: 2px;
+  background-color: #f5f5f5;
+
   border-color: black;
   border-width: 1px;
 
   display: flex;
+  align-items: center;
+  p {
+    font-family: "roboto";
+    font-size: 15px;
+  }
+  .name {
+    font-weight: bold;
+  }
+  .avatar_url {
+    width: 40px;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
 `;
 
-export { MenuComponent };
+export { MenuComponent, CardUserComponent };
