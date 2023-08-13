@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import { UserContext } from "./context/page";
 import Card from "@/components/card";
 import { MainComponent, DivNull } from "./styles";
 import Header from "@/components/header";
@@ -10,19 +11,17 @@ import { getUserData } from "@/service/api";
 
 export default function Home() {
   const [search, setSearch] = useState("");
-  const [user, setUser] = useState({
-    name: "",
-    avatar_url: "",
-    login: "",
-    bio: "",
-    followers: 0,
-    following: 0,
-    location: "",
-  });
+  const { user, login } = useContext(UserContext);
+  const [userGit, setUserGit] = useState(user);
+
   async function getUser() {
     const response = await getUserData(search);
-    setUser(response);
+    login(response);
   }
+  useEffect(() => {
+    setUserGit(user);
+  }, [login]);
+
   return (
     <>
       <Header />
@@ -39,20 +38,22 @@ export default function Home() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button onClick={getUser}>Buscar</button>
+          <button onClick={getUser}>
+            <IoSearch className="icon" />
+          </button>
         </div>
         <div className="search-result">
-          {user.name === "" ? (
+          {userGit?.name === "" ? (
             <DivNull></DivNull>
           ) : (
             <Card
-              name={user.name}
-              avatar_url={user.avatar_url}
-              login={user.login}
-              bio={user.bio}
-              followers={user.followers}
-              following={user.following}
-              location={user.location}
+              name={userGit?.name}
+              avatar_url={userGit?.avatar_url}
+              login={userGit?.login}
+              bio={userGit?.bio}
+              followers={userGit?.followers}
+              following={userGit?.following}
+              location={userGit?.location}
             />
           )}
         </div>

@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const MainComponent = styled.main`
   width: 100%;
+  position: relative;
   height: 100vh;
   background-color: #0d1117; //Fonte mais escura #010409
   display: flex;
@@ -50,6 +51,9 @@ const MainComponent = styled.main`
     }
     input::placeholder {
       color: black; /* Cor do placeholder branco */
+    }
+    .icon {
+      font-size: 25px;
     }
     button {
       width: 10%;
