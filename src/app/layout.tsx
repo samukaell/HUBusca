@@ -1,5 +1,7 @@
+"use client";
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
+import { UserProvider } from "./context/page";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -19,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <UserProvider>{children}</UserProvider>
+      </body>
     </html>
   );
 }
