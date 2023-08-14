@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const accessToken = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+//const accessToken = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
 
 async function getUserData(username: string) {
   const apiUrl = `https://api.github.com/users/${username}`;
