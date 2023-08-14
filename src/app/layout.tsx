@@ -1,7 +1,6 @@
-"use client";
+import { UserProvider } from "./context/user";
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
-import { UserProvider } from "./context/user";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
