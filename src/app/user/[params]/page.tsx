@@ -11,7 +11,15 @@ export default function User() {
   const { params } = useParams();
   const { login } = useContext(UserContext);
   const [repo, setRepo] = useState([
-    { id: 1, name: "", description: "", html_url: "" },
+    {
+      id: 1,
+      name: "",
+      description: "",
+      private: "",
+      html_url: "",
+      updated_at: "",
+      created_at: "",
+    },
   ]);
   const [userGit, setUserGit] = useState<UserProps>({
     id: 1,
@@ -61,7 +69,13 @@ export default function User() {
           </div>
         </div>
         <div className="repo">
-          <p className="repo-title">Repositorios</p>
+          <div className="title">
+            <p className="repo-title">Repositorios</p>
+            <p className="repo-count">
+              {repo.filter((repositorie) => !repositorie.private).length}
+            </p>
+          </div>
+          <div className="div-repo"></div>
           <div className="box-repo">
             {repo.map((repository, index) => [
               <Repo

@@ -68,12 +68,25 @@ const MainComponent = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    .repo-title {
-      width: 100%;
-      margin-bottom: 20px;
+    .title {
       display: flex;
-      justify-content: center;
-      font-size: 25px;
+      align-items: center;
+      margin-bottom: 20px;
+      .repo-title {
+        width: 100%;
+        font-size: 25px;
+        margin-right: 5px;
+      }
+      .repo-count {
+        font-size: 25px;
+        color: #2f81f7;
+      }
+    }
+    .div-repo {
+      width: 50%;
+      height: 1px;
+      background-color: #a9a9a9;
+      margin-bottom: 5px;
     }
     .box-repo {
       height: 90vh;
