@@ -96,12 +96,15 @@ const MainComponent = styled.main`
     }
     .bio {
       width: 100%;
-      text-align: center;
+
       @media (min-width: 576px) {
         font-size: 20px;
+        display: flex;
+        align-items: flex-start;
       }
       @media (max-width: 575px) {
         font-size: 14px;
+        text-align: center;
       }
     }
   }
