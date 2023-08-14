@@ -65,5 +65,5 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
     </UserContext.Provider>
   );
 };
-export default null;
+
 export { UserProvider, UserContext };

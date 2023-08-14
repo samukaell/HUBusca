@@ -1,6 +1,6 @@
 "use client";
 import { useContext, useState, useEffect } from "react";
-import { UserContext, UserProps } from "./context/page";
+import { UserContext, UserProps } from "./context/user";
 import Card from "@/components/card";
 import { MainComponent, DivNull } from "./styles";
 import Header from "@/components/header";
