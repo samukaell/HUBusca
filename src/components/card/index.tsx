@@ -9,8 +9,8 @@ export default function Card(props: any) {
     <CardComponent>
       <div className="box-name-image">
         <div className="box-name">
-          <p className="name">{name}/</p>
-          <p className="login">{login}</p>
+          <p className="name">{name}</p>
+          <p className="login">/{login}</p>
         </div>
         <Link href={`/user/${login}`}>
           <img src={avatar_url} className="avatar" />
@@ -19,12 +19,18 @@ export default function Card(props: any) {
       <p className="bio">{bio}</p>
       <div className="follow">
         <IoPeople className="icon" />
-        <p className="followers">{followers}</p>
-        <p>.followers</p>
-        <p className="followers">{following}</p>
-        <p>.following</p>
+        <div className="box-f">
+          <p className="followers">{followers}</p>
+          <p>.followers</p>
+        </div>
+        <div className="box-f">
+          <p className="followers">{following}</p>
+          <p>.following</p>
+        </div>
         <IoLocationSharp className="icon" />
-        <p> {location}</p>
+        <div className="box-f">
+          <p> {location}</p>
+        </div>
       </div>
     </CardComponent>
   );

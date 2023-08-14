@@ -4,7 +4,7 @@ import "../global/reset.css";
 import styled from "styled-components";
 
 const MainComponent = styled.main`
-  width: 100%;
+  width: 100vw;
   position: relative;
   height: 100vh;
   background-color: #0d1117; //Fonte mais escura #010409
@@ -19,25 +19,59 @@ const MainComponent = styled.main`
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
-
-    .logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 100%;
+    @media (min-width: 576px) {
+      align-items: center;
+      justify-content: center;
     }
+    @media (max-width: 575px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      border-radius: 100%;
+      @media (min-width: 576px) {
+        width: 9vw;
+        height: 9vw;
+      }
+      @media (max-width: 575px) {
+        margin-top: 20px;
+        width: 60px;
+        height: 60px;
+      }
+    }
+
     h1 {
       font-family: "roboto";
       font-weight: bold;
       color: white;
       font-size: 70px;
+      @media (min-width: 576px) {
+        font-size: 70px;
+      }
+      @media (max-width: 575px) {
+        font-size: 40px;
+      }
     }
   }
   .box-input {
     width: 70%;
     display: flex;
-    justify-content: center;
+
+    @media (min-width: 576px) {
+      justify-content: center;
+    }
+    @media (max-width: 575px) {
+      flex-direction: column;
+      align-items: center;
+    }
     input {
-      width: 40%;
+      @media (min-width: 576px) {
+        width: 40%;
+      }
+      @media (max-width: 575px) {
+        width: 100%;
+      }
+
       height: 45px;
       margin-right: 5px;
       border-width: 2px;
@@ -56,9 +90,18 @@ const MainComponent = styled.main`
       font-size: 25px;
     }
     button {
-      width: 10%;
+      @media (min-width: 576px) {
+        width: 10%;
+        background-color: white;
+      }
+      @media (max-width: 575px) {
+        margin-top: 10px;
+        width: 100%;
+        background-color: #2f81f7;
+      }
+
       height: 50px;
-      background-color: white;
+
       border-radius: 10px;
       border-style: none;
       color: black;
