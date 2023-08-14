@@ -6,7 +6,11 @@ async function getUserData(username: string) {
   const apiUrl = `https://api.github.com/users/${username}`;
 
   try {
-    const response = await axios.get(apiUrl);
+    const response = await axios.get(apiUrl, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
     return response.data;
   } catch (error: any) {
     throw new Error("Erro ao buscar dados do usuário: " + error.message);
@@ -18,7 +22,11 @@ async function getRepoByUser(login: string) {
 
   try {
     console.log("Token", accessToken);
-    const response = await axios.get(apiUrl);
+    const response = await axios.get(apiUrl, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
 
     return response.data;
   } catch (error: any) {
@@ -32,7 +40,11 @@ async function getLanguagesRepo(login: string, repo: string) {
   const apiUrl = `https://api.github.com/repos/${login}/${repo}/languages`;
 
   try {
-    const response = await axios.get(apiUrl);
+    const response = await axios.get(apiUrl, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
 
     return response.data;
   } catch (error: any) {
