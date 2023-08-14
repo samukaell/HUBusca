@@ -60,6 +60,11 @@ const MainComponent = styled.main`
         color: #a9a9a9;
         margin-bottom: 10px;
       }
+      .id {
+        font-size: 12px;
+        color: #a9a9a9;
+        margin-bottom: 10px;
+      }
     }
   }
   .repo {

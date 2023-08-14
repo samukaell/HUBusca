@@ -18,6 +18,7 @@ export default function User() {
       private: "",
       html_url: "",
       updated_at: "",
+      pushed_at: "",
       created_at: "",
     },
   ]);
@@ -54,6 +55,7 @@ export default function User() {
           <div className="name-login">
             <p className="name">{userGit.name}</p>
             <p className="login">{userGit.login}</p>
+            <p className="id">ID:{userGit.id}</p>
           </div>
           <p className="bio">{userGit.bio}</p>
           <div className="follow">
@@ -82,6 +84,8 @@ export default function User() {
                 name={repository.name}
                 description={repository.description}
                 html_url={repository.html_url}
+                pushed_at={repository.pushed_at}
+                created_at={repository.created_at}
                 key={repository.id}
               />,
             ])}
