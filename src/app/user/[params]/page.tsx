@@ -4,7 +4,7 @@ import { MainComponent } from "./styles";
 import { IoPeople, IoLocationSharp } from "react-icons/io5";
 import Header from "@/components/header";
 import Repo from "@/components/repo";
-import { UserContext, UserProps } from "@/app/context/page";
+import { UserContext, UserProps } from "@/app/context/user";
 import { useContext, useEffect, useState } from "react";
 import { getUserData, getRepoByUser } from "@/service/api";
 export default function User() {

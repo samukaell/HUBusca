@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { CardComponent } from "./styles";
 import { IoPeople, IoLocationSharp } from "react-icons/io5";

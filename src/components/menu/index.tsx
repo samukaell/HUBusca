@@ -1,7 +1,6 @@
-"use client";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CardUserComponent, MenuComponent } from "./styles";
-import { UserContext } from "@/app/context/page";
+import { UserContext } from "@/app/context/user";
 import { getUserData } from "@/service/api";
 export default function Menu(props: any) {
   const { open } = props;
