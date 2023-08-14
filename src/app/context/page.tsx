@@ -1,3 +1,4 @@
+"use client";
 import { createContext, useContext, useState } from "react";
 
 export type UserProps = {
@@ -60,9 +61,9 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
   };
   return (
     <UserContext.Provider value={{ user, getLastUser, login }}>
-      <>{children}</>
+      {children}
     </UserContext.Provider>
   );
 };
-
+export default null;
 export { UserProvider, UserContext };
