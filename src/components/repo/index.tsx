@@ -1,3 +1,4 @@
+"use client";
 import { useParams } from "next/navigation";
 import { RepoComponent } from "./styles";
 import { getLanguagesRepo } from "@/service/api";

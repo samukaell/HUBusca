@@ -1,3 +1,4 @@
+"use client";
 import { useContext, useState } from "react";
 import { CardUserComponent, MenuComponent } from "./styles";
 import { UserContext } from "@/app/context/page";
