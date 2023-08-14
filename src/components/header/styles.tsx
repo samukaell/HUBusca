@@ -21,8 +21,15 @@ const HeaderComponent = styled.header`
     color: inherit;
   }
   .logo {
-    width: 50px;
-    height: 50px;
+    @media (min-width: 576px) {
+      width: 50px;
+      height: 50px;
+    }
+    @media (max-width: 575px) {
+      width: 40px;
+      height: 40px;
+    }
+
     margin-left: 3vw;
   }
   .icon {
