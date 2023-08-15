@@ -1,12 +1,8 @@
 import { UserProvider } from "./context/user";
 import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export const metadata: Metadata = {
   title: "HUBusca",
@@ -20,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={roboto.className}>
+      <body className={inter.className}>
         <UserProvider>{children}</UserProvider>
       </body>
     </html>

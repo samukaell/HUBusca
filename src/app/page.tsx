@@ -26,7 +26,6 @@ export default function Home() {
   async function getUser() {
     const response = await getUserData(search);
     login(response);
-    console.log("Lista", user);
   }
   useEffect(() => {
     setUserGit(getLastUser());

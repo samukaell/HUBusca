@@ -38,7 +38,7 @@ const CardComponent = styled.div`
       align-items: center;
       justify-content: flex-start;
       p {
-        font-family: "roboto";
+        font-family: Arial, Helvetica, sans-serif;
       }
       @media (min-width: 576px) {
         p {
@@ -81,7 +81,7 @@ const CardComponent = styled.div`
 
   .bio {
     color: #808080;
-    font-family: "roboto";
+    font-family: Arial, Helvetica, sans-serif;
     @media (min-width: 911px) {
       font-size: 18px;
     }

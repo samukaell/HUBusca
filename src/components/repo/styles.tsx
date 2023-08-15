@@ -12,7 +12,7 @@ const RepoComponent = styled.div`
   border-width: 1px;
   border-color: #a9a9a9;
   border-radius: 20px;
-
+  font-family: Arial, Helvetica, sans-serif;
   color: black;
 
   @media (min-width: 576px) {

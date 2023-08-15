@@ -10,12 +10,13 @@ export default function Repo(props: any) {
   //funções
   function handleLinkClick() {
     window.open(html_url, "_blank");
-    console.log("Linguagem-", languages);
   }
   async function getLanguages() {
-    const response = await getLanguagesRepo(params.toString(), name);
-    const arrayLanguages = Object.keys(response);
-    setLanguages(arrayLanguages);
+    if (name !== null && name !== undefined && name !== "") {
+      const response = await getLanguagesRepo(params.toString(), name);
+      const arrayLanguages = Object.keys(response);
+      setLanguages(arrayLanguages);
+    }
   }
   function dateFormat(data: string) {
     const partes = data.split("T")[0].split("-");

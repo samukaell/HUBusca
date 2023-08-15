@@ -11,7 +11,7 @@ const MainComponent = styled.main`
   display: flex;
 
   color: white;
-  font-family: "roboto";
+  font-family: Arial, Helvetica, sans-serif;
   @media (min-width: 931px) {
     justify-content: center;
   }

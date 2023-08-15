@@ -40,7 +40,7 @@ const CardUserComponent = styled.div`
   display: flex;
   align-items: center;
   p {
-    font-family: "roboto";
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
   }
   .name {

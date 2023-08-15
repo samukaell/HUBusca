@@ -21,7 +21,6 @@ async function getRepoByUser(login: string) {
   const apiUrl = `https://api.github.com/users/${login}/repos`;
 
   try {
-    console.log("Token", accessToken);
     const response = await axios.get(apiUrl, {
       headers: {
         Authorization: `Bearer ${accessToken}`,

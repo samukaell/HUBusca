@@ -41,7 +41,7 @@ const MainComponent = styled.main`
     }
 
     h1 {
-      font-family: "roboto";
+      font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
       color: white;
       font-size: 70px;
@@ -79,7 +79,7 @@ const MainComponent = styled.main`
       border: none;
       background-color: white;
       outline: none;
-      font-family: "roboto";
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 20px;
       color: black;
     }
@@ -105,7 +105,7 @@ const MainComponent = styled.main`
       border-radius: 10px;
       border-style: none;
       color: black;
-      font-family: "roboto";
+      font-family: Arial, Helvetica, sans-serif;
     }
   }
   .search-result {
