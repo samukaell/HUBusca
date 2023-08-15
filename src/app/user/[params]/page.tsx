@@ -10,6 +10,7 @@ import { getUserData, getRepoByUser } from "@/service/api";
 export default function User() {
   const { params } = useParams();
   const { login } = useContext(UserContext);
+  let repoAble = false;
   const [repo, setRepo] = useState([
     {
       id: 1,
@@ -79,7 +80,7 @@ export default function User() {
           </div>
           <div className="div-repo"></div>
           <div className="box-repo">
-            {repo[0]?.name == "" || repo.length === 0 ? (
+            {repo[0]?.name === "" || repo.length === 0 ? (
               <></>
             ) : (
               repo.map((repository, index) => [
@@ -99,3 +100,6 @@ export default function User() {
     </>
   );
 }
+/*
+
+*/

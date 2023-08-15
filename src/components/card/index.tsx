@@ -31,6 +31,11 @@ export default function Card(props: any) {
           <p> {location}</p>
         </div>
       </div>
+      <div className="bar-color">
+        <div className="yellow"></div>
+        <div className="orage"></div>
+        <div className="pink"></div>
+      </div>
     </CardComponent>
   );
 }

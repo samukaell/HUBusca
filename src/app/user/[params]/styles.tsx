@@ -5,11 +5,11 @@ import styled from "styled-components";
 
 const MainComponent = styled.main`
   margin-top: 30px;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: #0d1117; //Fonte mais escura #010409
   display: flex;
-
+  overflow-x: hidden;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   @media (min-width: 931px) {
@@ -21,11 +21,9 @@ const MainComponent = styled.main`
   }
   .info-user {
     margin-top: 40px;
-
     display: flex;
     flex-direction: column;
     @media (min-width: 931px) {
-      margin-left: 5vw;
       width: 40%;
     }
     @media (max-width: 930px) {
@@ -95,14 +93,17 @@ const MainComponent = styled.main`
       }
     }
     .bio {
-      width: 100%;
-
-      @media (min-width: 576px) {
+      width: 90%;
+      @media (min-width: 931px) {
         font-size: 20px;
         display: flex;
         align-items: flex-start;
       }
-      @media (max-width: 575px) {
+      @media (max-width: 930px) {
+        font-size: 20px;
+        text-align: center;
+      }
+      @media (max-width: 929px) {
         font-size: 14px;
         text-align: center;
       }
@@ -115,7 +116,7 @@ const MainComponent = styled.main`
     align-items: center;
     background-color: #0d1117;
     @media (min-width: 931px) {
-      width: 60%;
+      width: 40%;
     }
     @media (max-width: 930px) {
       width: 100vw;
@@ -146,6 +147,7 @@ const MainComponent = styled.main`
       }
     }
     .box-repo {
+      width: 100%;
       height: 90vh;
       display: flex;
       flex-direction: column;

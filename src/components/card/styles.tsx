@@ -5,6 +5,9 @@ import styled from "styled-components";
 
 const CardComponent = styled.div`
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
   @media (min-width: 911px) {
     width: 40%;
@@ -12,8 +15,8 @@ const CardComponent = styled.div`
     border-radius: 20px;
   }
   @media (max-width: 910px) {
-    width: 100vw;
-    height: 30vh;
+    width: 100%;
+    height: 40vh;
   }
 
   background-color: white;
@@ -66,7 +69,7 @@ const CardComponent = styled.div`
         border-radius: 15px;
       }
       @media (max-width: 575px) {
-        width: 110px;
+        width: 95px;
         border-radius: 10px;
       }
       @media (max-width: 300px) {
@@ -110,7 +113,6 @@ const CardComponent = styled.div`
       }
     }
     @media (max-width: 575px) {
-      margin-top: 10px;
       display: flex;
       justify-content: space-around;
       .box-f {
@@ -131,6 +133,28 @@ const CardComponent = styled.div`
       .icon {
         display: none;
       }
+    }
+  }
+  .bar-color {
+    width: 100%;
+    height: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 100%;
+    .yellow {
+      width: 60%;
+      height: 100%;
+      background-color: #ffbe0b;
+    }
+    .orage {
+      width: 30%;
+      height: 100%;
+      background-color: #fb5607;
+    }
+    .pink {
+      width: 10%;
+      height: 100%;
+      background-color: #ff006e;
     }
   }
 `;

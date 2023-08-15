@@ -16,7 +16,7 @@ const RepoComponent = styled.div`
   color: black;
 
   @media (min-width: 576px) {
-    width: 50%;
+    width: 80%;
   }
   @media (max-width: 575px) {
     width: 60vw;
