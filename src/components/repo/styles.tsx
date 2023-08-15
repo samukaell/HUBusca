@@ -19,7 +19,7 @@ const RepoComponent = styled.div`
     width: 80%;
   }
   @media (max-width: 575px) {
-    width: 60vw;
+    width: 60%;
   }
 
   .title {
@@ -29,7 +29,7 @@ const RepoComponent = styled.div`
     color: #a9a9a9;
   }
   .date-box {
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     margin-top: 10px;

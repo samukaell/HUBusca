@@ -4,7 +4,6 @@ import "../../../global/reset.css";
 import styled from "styled-components";
 
 const MainComponent = styled.main`
-  margin-top: 30px;
   width: 100%;
   height: 100vh;
   background-color: #0d1117; //Fonte mais escura #010409
@@ -20,7 +19,7 @@ const MainComponent = styled.main`
     align-items: center;
   }
   .info-user {
-    margin-top: 40px;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     @media (min-width: 931px) {
@@ -110,7 +109,7 @@ const MainComponent = styled.main`
     }
   }
   .repo {
-    margin-top: 40px;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
