@@ -79,16 +79,20 @@ export default function User() {
           </div>
           <div className="div-repo"></div>
           <div className="box-repo">
-            {repo.map((repository, index) => [
-              <Repo
-                name={repository.name}
-                description={repository.description}
-                html_url={repository.html_url}
-                pushed_at={repository.pushed_at}
-                created_at={repository.created_at}
-                key={repository.id}
-              />,
-            ])}
+            {repo[0]?.name == "" || repo.length === 0 ? (
+              <></>
+            ) : (
+              repo.map((repository, index) => [
+                <Repo
+                  name={repository.name}
+                  description={repository.description}
+                  html_url={repository.html_url}
+                  pushed_at={repository.pushed_at}
+                  created_at={repository.created_at}
+                  key={repository.id}
+                />,
+              ])
+            )}
           </div>
         </div>
       </MainComponent>
