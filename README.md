@@ -35,5 +35,5 @@ Veja a aplicação em funcionamento no Vercel:
 
 ### 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/hu-busca.git
+git clone https://github.com/samukaell/hu-busca.git
 cd hu-busca
