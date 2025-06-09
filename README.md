@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🔍 HUBusca
 
-## Getting Started
+**HUBusca** é uma aplicação web que permite buscar perfis de usuários no GitHub através da API pública. A interface exibe informações do perfil, os repositórios do usuário e mantém um **histórico dos últimos perfis buscados** para consultas rápidas.
 
-First, run the development server:
+---
 
+## 🚀 Tecnologias Utilizadas
+
+- **React** – Construção da interface do usuário
+- **Axios** – Chamadas HTTP à API do GitHub
+- **Styled-components** – Estilização com CSS-in-JS
+- **React Hooks** – Gerenciamento de estado e efeitos
+- **LocalStorage** – Salvamento persistente do histórico de busca
+
+---
+
+## 🧠 Funcionalidades
+
+- 🆔 **Busca de perfis GitHub** por nome de usuário
+- 📄 **Exibição de dados do perfil**: avatar, nome, bio, seguidores, etc.
+- 📑 **Lista de repositórios** do usuário com visualização de nome e link
+- 🕘 **Histórico de buscas recentes** (persistente entre sessões)
+- 🧹 **Limpar histórico** manualmente
+
+---
+
+## 🔗 Demonstração
+
+Veja a aplicação em funcionamento no Vercel:  
+👉 [https://hu-busca.vercel.app](https://hu-busca.vercel.app)
+
+---
+
+## 🛠️ Instalação e uso local
+
+### 1. Clone o repositório:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+git clone https://github.com/seu-usuario/hu-busca.git
+cd hu-busca
