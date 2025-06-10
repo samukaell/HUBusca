@@ -4,106 +4,83 @@ import "../../global/reset.css";
 import styled from "styled-components";
 
 const RepoComponent = styled.div`
-  height: 400px;
-  margin-bottom: 10px;
-  padding: 20px;
-  border-radius: 1px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #a9a9a9;
-  border-radius: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
+  width: 90%;
+  background-color: #ffffff;
+  margin: 20px auto;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-  @media (min-width: 576px) {
-    width: 80%;
-  }
-  @media (max-width: 575px) {
-    width: 60%;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.01);
   }
 
   .title {
-    color: #2f81f7;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0969da;
+    margin-bottom: 8px;
   }
-  p {
-    color: #a9a9a9;
-  }
-  .date-box {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
 
-    @media (min-width: 576px) {
-      .date {
-        display: flex;
-        align-items: center;
-        margin-right: 5px;
-        p {
-          font-size: 12px;
-        }
-        .date-info {
-          margin-left: 5px;
-          color: #2f81f7;
-        }
-      }
-    }
-    @media (max-width: 575px) {
+  .description {
+    font-size: 14px;
+    color: #57606a;
+    margin-bottom: 16px;
+  }
+
+  .date-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    .date {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-right: 5px;
-      .date {
-        display: flex;
-        align-items: center;
-        margin-right: 5px;
+      flex-direction: row;
+      gap: 6px;
+      align-items: center;
+
+      .text {
+        font-size: 12px;
+        color: #57606a;
       }
-      p {
-        font-size: 10px;
-      }
+
       .date-info {
-        margin-left: 5px;
-        color: #2f81f7;
+        font-size: 12px;
+        color: #24292f;
+        font-weight: 500;
       }
     }
   }
+
   .container-lang {
     display: flex;
+    flex-direction: column;
 
-    margin-bottom: 10px;
-    margin-top: 10px;
-    @media (min-width: 576px) {
-      align-items: center;
-      .title-languages {
+    .title-languages {
+      font-size: 14px;
+      font-weight: 500;
+      color: #24292f;
+      margin-bottom: 6px;
+    }
+
+    .languages-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      p {
+        background-color: #f3f4f6;
+        padding: 4px 8px;
+        border-radius: 6px;
         font-size: 12px;
-        color: #2f81f7;
-      }
-      .languages-box {
-        display: flex;
-        p {
-          font-size: 12px;
-        }
+        color: #1f2937;
+        font-weight: 500;
       }
     }
-    @media (max-width: 575px) {
-      align-items: flex-start;
-      .title-languages {
-        font-size: 12px;
-        color: #2f81f7;
-      }
-      .languages-box {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        p {
-          font-size: 12px;
-        }
-      }
-    }
-  }
-
-  :hover {
-    cursor: pointer;
   }
 `;
 

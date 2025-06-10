@@ -3,21 +3,24 @@
 import "../../global/reset.css";
 import styled from "styled-components";
 
-type Props = {
-  altura: string;
+type MenuProps = {
+  open: boolean;
 };
 
-const MenuComponent = styled.div<Props>`
+const MenuComponent = styled.div<MenuProps>`
   position: fixed;
   top: 60px;
   right: 0;
   z-index: 3;
   width: 200px;
-  height: ${(props) => props.altura};
-  box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.71);
 
-  overflow-x: hidden;
-  transition: height 0.3s ease-in-out;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  max-height: ${({ open }) => (open ? "90vh" : "0")};
+  opacity: ${({ open }) => (open ? "1" : "0")};
+
+  box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.71);
   background-color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -28,32 +31,38 @@ const MenuComponent = styled.div<Props>`
 `;
 
 const CardUserComponent = styled.div`
-  width: 100%;
-  margin-top: 2px;
-  margin-bottom: 3px;
-  margin-left: 2px;
-  background-color: #f5f5f5;
-
-  border-color: black;
-  border-width: 1px;
+  width: 90%;
+  margin: 6px 0;
+  padding: 8px 10px;
+  background-color: #f9f9f9;
 
   display: flex;
   align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+
+  transition: background-color 0.2s ease;
+
   p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
+    margin: 0;
   }
+
   .name {
     font-weight: bold;
   }
+
   .avatar_url {
-    width: 40px;
-    border-radius: 5px;
-    margin-right: 5px;
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 6px;
   }
 
   :hover {
     cursor: pointer;
+    background-color: #ececec;
   }
 `;
 

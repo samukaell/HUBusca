@@ -4,13 +4,16 @@ import "../../../global/reset.css";
 import styled from "styled-components";
 
 const MainComponent = styled.main`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background-color: #0d1117; //Fonte mais escura #010409
+  background-color: #0d1117;
   display: flex;
-  overflow-x: hidden;
+  overflow-x: hidden; // impedir scroll lateral
+  overflow-y: auto;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+
   @media (min-width: 931px) {
     justify-content: center;
   }
@@ -18,32 +21,33 @@ const MainComponent = styled.main`
     flex-direction: column;
     align-items: center;
   }
+
   .info-user {
     margin-top: 10vh;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+
     @media (min-width: 931px) {
       width: 40%;
     }
     @media (max-width: 930px) {
-      width: 100vw;
+      width: 100%;
       align-items: center;
     }
+
     .image {
-      @media (min-width: 576px) {
-        width: 300px;
-      }
-      @media (max-width: 575px) {
-        width: 200px;
-      }
-      width: 300px;
+      width: 250px;
+      max-width: 80%;
       margin-bottom: 10px;
       border-radius: 100%;
     }
+
     .follow {
       margin-top: 10px;
       display: flex;
       align-items: center;
+
       .followers {
         font-size: 14px;
         font-weight: bold;
@@ -56,23 +60,27 @@ const MainComponent = styled.main`
         color: #a9a9a9;
       }
     }
+
     .local {
       display: flex;
       align-items: center;
       margin-top: 10px;
+
       .icon {
         font-size: 25px;
       }
     }
+
     .name-login {
+      font-size: 30px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
       @media (min-width: 931px) {
-        font-size: 30px;
+        align-items: flex-start;
       }
       @media (max-width: 930px) {
-        font-size: 30px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
         align-items: center;
       }
 
@@ -91,40 +99,40 @@ const MainComponent = styled.main`
         margin-bottom: 10px;
       }
     }
+
     .bio {
       width: 90%;
+      font-size: 16px;
+      text-align: center;
+
       @media (min-width: 931px) {
         font-size: 20px;
-        display: flex;
+        text-align: left;
         align-items: flex-start;
-      }
-      @media (max-width: 930px) {
-        font-size: 20px;
-        text-align: center;
-      }
-      @media (max-width: 929px) {
-        font-size: 14px;
-        text-align: center;
       }
     }
   }
+
   .repo {
     margin-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #0d1117;
+    box-sizing: border-box;
+
     @media (min-width: 931px) {
       width: 40%;
     }
     @media (max-width: 930px) {
-      width: 100vw;
-      align-items: center;
+      width: 100%;
     }
+
     .title {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
+
       .repo-title {
         font-size: 25px;
         margin-right: 5px;
@@ -134,24 +142,21 @@ const MainComponent = styled.main`
         color: #2f81f7;
       }
     }
+
     .div-repo {
       height: 1px;
       background-color: #a9a9a9;
       margin-bottom: 5px;
-      @media (min-width: 576px) {
-        width: 50%;
-      }
-      @media (max-width: 575px) {
-        width: 80vw;
-      }
+      width: 80%;
     }
+
     .box-repo {
       width: 100%;
-      height: 90vh;
+      max-height: 70vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      overflow-y: scroll;
+      overflow-y: auto;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }

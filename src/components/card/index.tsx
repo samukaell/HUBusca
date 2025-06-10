@@ -4,6 +4,9 @@ import { IoPeople, IoLocationSharp } from "react-icons/io5";
 export default function Card(props: any) {
   const { name, avatar_url, login, bio, followers, following, location } =
     props;
+  function handleLinkClick() {
+    window.location.href =`/user/${login}`;
+  }
   return (
     <CardComponent>
       <div className="box-name-image">

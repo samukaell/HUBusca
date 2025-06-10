@@ -11,6 +11,8 @@ const HeaderComponent = styled.header`
   z-index: 3;
   width: 100%;
   height: 8vh;
+  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,20 +24,20 @@ const HeaderComponent = styled.header`
   }
   .logo {
     @media (min-width: 576px) {
-      width: 50px;
-      height: 50px;
-    }
-    @media (max-width: 575px) {
       width: 40px;
       height: 40px;
     }
+    @media (max-width: 575px) {
+      width: 30px;
+      height: 30px;
+    }
 
-    margin-left: 3vw;
+    padding-left: 3vw;
   }
   .icon {
     color: white;
     font-size: 30px;
-    margin-right: 3vw;
+    padding-right: 3vw;
   }
 `;
 
