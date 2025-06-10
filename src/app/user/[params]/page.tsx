@@ -47,30 +47,34 @@ export default function User() {
     <>
       <Header />
       <MainComponent>
-        <div className="info-user">
-          <img
-            src={userGit.avatar_url}
-            alt="Imagem de perfil"
-            className="image"
-          />
-          <div className="name-login">
-            <p className="name">{userGit.name}</p>
-            <p className="login">{userGit.login}</p>
-            <p className="id">ID:{userGit.id}</p>
+
+          <div className="info-user"
+            onClick={() => window.open(`https://github.com/${userGit.login}`, "_blank")}
+          >
+            <img
+              src={userGit.avatar_url}
+              alt="Imagem de perfil"
+              className="image"
+            />
+            <div className="name-login">
+              <p className="name">{userGit.name}</p>
+              <p className="login">{userGit.login}</p>
+              <p className="id">ID:{userGit.id}</p>
+            </div>
+            <p className="bio">{userGit.bio}</p>
+            <div className="follow">
+              <IoPeople className="icon" />
+              <p className="followers">{userGit.followers}</p>
+              <p className="sub">.followers</p>
+              <p className="followers">{userGit.following}</p>
+              <p className="sub">.following</p>
+            </div>
+            <div className="local">
+              <IoLocationSharp className="icon" />
+              <p> {userGit.location}</p>
+            </div>
           </div>
-          <p className="bio">{userGit.bio}</p>
-          <div className="follow">
-            <IoPeople className="icon" />
-            <p className="followers">{userGit.followers}</p>
-            <p className="sub">.followers</p>
-            <p className="followers">{userGit.following}</p>
-            <p className="sub">.following</p>
-          </div>
-          <div className="local">
-            <IoLocationSharp className="icon" />
-            <p> {userGit.location}</p>
-          </div>
-        </div>
+
         <div className="repo">
           <div className="title">
             <p className="repo-title">Repositorios</p>

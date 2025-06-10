@@ -49,10 +49,10 @@ export default function SimpleAlert({
       open={open}
       autoHideDuration={1500}
       onClose={onClose}
-      sx={{ width: "30%", marginLeft: "20px" }}
+      sx={{ width: "40%", marginLeft: "20px" }}
     >
       <Alert
-        sx={{ width: "100%" }}
+        sx={{ width: "100%", fontSize: "16px" }}
         icon={alertProps.icon}
         severity={alertProps.severity}
         onClose={onClose}

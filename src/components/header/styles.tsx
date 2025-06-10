@@ -28,8 +28,8 @@ const HeaderComponent = styled.header`
       height: 40px;
     }
     @media (max-width: 575px) {
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
     }
 
     padding-left: 3vw;

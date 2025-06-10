@@ -27,6 +27,7 @@ const MainComponent = styled.main`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    cursor: pointer;  
 
     @media (min-width: 931px) {
       width: 40%;
