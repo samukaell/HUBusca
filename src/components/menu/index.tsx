@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useContext } from "react";
 import { CardUserComponent } from "./styles";
 import { UserContext } from "@/app/context/user";
@@ -45,6 +45,7 @@ export default function Menu({ open }: MenuProps) {
         >
           {user
             .map((userGit) => (
+              <Link href={`/user/${userGit.login}`}>
               <CardUserComponent
                 key={userGit.id}
                 onClick={() => updateList(userGit.login)}
@@ -52,6 +53,7 @@ export default function Menu({ open }: MenuProps) {
                 <img src={userGit.avatar_url} className="avatar_url" />
                 <p className="login">{userGit.login}</p>
               </CardUserComponent>
+              </Link>
             ))
             .reverse()}
         </motion.div>
