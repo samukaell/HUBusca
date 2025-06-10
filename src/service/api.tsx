@@ -13,7 +13,11 @@ async function getUserData(username: string) {
     });
     return response.data;
   } catch (error: any) {
-    throw new Error("Erro ao buscar dados do usuário: " + error.message);
+    if (error.response.status === 404) {
+      return "404";
+    } else {
+      throw new Error("Erro ao buscar dados do usuário: " + error.message);
+    }
   }
 }
 

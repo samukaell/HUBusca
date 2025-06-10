@@ -35,10 +35,14 @@ export default function User() {
   });
   async function loadByParams() {
     const response = await getUserData(params.toString());
-    setUserGit(response);
-    login(response);
-    const repository = await getRepoByUser(params.toString());
-    setRepo(repository);
+    if (response === "404") {
+      window.location.href = "/404";
+    } else {
+      setUserGit(response);
+      login(response);
+      const repository = await getRepoByUser(params.toString());
+      setRepo(repository);
+    }
   }
   useEffect(() => {
     loadByParams();
