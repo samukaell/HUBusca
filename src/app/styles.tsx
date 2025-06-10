@@ -19,6 +19,7 @@ const MainComponent = styled.main`
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
+    margin-top: 20px;
     @media (min-width: 576px) {
       align-items: center;
       justify-content: center;
@@ -26,6 +27,7 @@ const MainComponent = styled.main`
     @media (max-width: 575px) {
       flex-direction: column;
       align-items: center;
+      margin-top: 40vh;
     }
     .logo {
       border-radius: 100%;
