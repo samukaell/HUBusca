@@ -102,7 +102,7 @@ const MainComponent = styled.main`
         background-color: #2f81f7;
       }
 
-      height: 50px;
+      height: 45px;
 
       border-radius: 10px;
       border-style: none;
