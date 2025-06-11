@@ -31,6 +31,8 @@ export default function Home() {
   const [tipo, setTipo] = useState<AlertaTipo>("error");
   const [open, setOpen] = useState(false);
   const [mensagem, setMensagem] = useState("");
+  //carregar os dados do usuário
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleCloseAlert = (
     event?: React.SyntheticEvent | Event,
@@ -49,10 +51,6 @@ export default function Home() {
       setOpen(true);
       return;
     }
-
-    setTipo("success");
-    setMensagem("Usuário carregado com sucesso");
-    setOpen(true);
     login(response);
   }
 
@@ -60,52 +58,81 @@ export default function Home() {
     setUserGit(getLastUser());
   }, [login]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 50);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Header />
-      <MainComponent>
-        <div className="box-logo">
-          <Image src={logo} alt="Logo do Github" className="logo" />
-          <h1>HUBusca</h1>
-        </div>
+      {isLoading ? (
+        <h1
+          style={{
+            fontSize: '2.5rem',
+            fontFamily: 'monospace',
+            fontWeight: 'bold',
+            color: 'white',
+            backgroundColor: '#000',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100vh',
+            margin: 0
+          }}
+        >
+          {"Carregando..."}
+        </h1>
+      ) : (
+        <>
+          <MainComponent>
+            <div className="box-logo">
+              <Image src={logo} alt="Logo do Github" className="logo" />
+              <h1>HUBusca</h1>
+            </div>
 
-        <div className="box-input">
-          <input
-            placeholder="Nome do usuário"
-            type="text"
-            required
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            <div className="box-input">
+              <input
+                placeholder="Nome do usuário"
+                type="text"
+                required
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    getUser();
+                  }
+                }}
+              />
+              <button onClick={getUser}>
+                <IoSearch className="icon" />
+              </button>
+            </div>
+
+            <div className="search-result">
+              {userGit?.name === "" ? (
+                <DivNull />
+              ) : (
+                <Card
+                  name={userGit?.name}
+                  avatar_url={userGit?.avatar_url}
+                  login={userGit?.login}
+                  bio={userGit?.bio}
+                  followers={userGit?.followers}
+                  following={userGit?.following}
+                  location={userGit?.location}
+                  key={userGit.id}
+                />
+              )}
+            </div>
+          </MainComponent>
+          <SimpleAlert
+            open={open}
+            onClose={handleCloseAlert}
+            mensagem={mensagem}
+            type={tipo}
           />
-          <button onClick={getUser}>
-            <IoSearch className="icon" />
-          </button>
-        </div>
-
-        <div className="search-result">
-          {userGit?.name === "" ? (
-            <DivNull />
-          ) : (
-            <Card
-              name={userGit?.name}
-              avatar_url={userGit?.avatar_url}
-              login={userGit?.login}
-              bio={userGit?.bio}
-              followers={userGit?.followers}
-              following={userGit?.following}
-              location={userGit?.location}
-              key={userGit.id}
-            />
-          )}
-        </div>
-      </MainComponent>
-
-      <SimpleAlert
-        open={open}
-        onClose={handleCloseAlert}
-        mensagem={mensagem}
-        type={tipo}
-      />
+        </>)}
     </>
   );
 }

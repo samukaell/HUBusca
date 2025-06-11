@@ -45,7 +45,7 @@ export default function Menu({ open }: MenuProps) {
         >
           {user
             .map((userGit) => (
-              <Link href={`/user/${userGit.login}`}>
+              <Link href={`/user/${userGit.login}`} style={{ width: "100%" }}>
               <CardUserComponent
                 key={userGit.id}
                 onClick={() => updateList(userGit.login)}
