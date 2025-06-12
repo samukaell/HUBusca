@@ -27,7 +27,7 @@ const MainComponent = styled.main`
     @media (max-width: 575px) {
       flex-direction: column;
       align-items: center;
-      margin-top: 40vh;
+      margin-top: 20vh;
     }
     .logo {
       border-radius: 100%;
